@@ -1,0 +1,68 @@
+<section class="suggestion" id="suggestion">
+  <div class="container">
+    <div class="contact-box">
+      <div class="contact-info">
+        <h3 class="title">Texto</h3>
+        <p class="text">
+            {{NombreActual.message}}
+        </p>
+        <div class="information-wrap">
+            <h5 class="title-sm">Nombre</h5>
+          <div class="information">
+            <p class="info-text">{{NombreActual.nombre}}</p>
+          </div>
+          <h5 class="title-sm">Apellido</h5>
+          <div class="information">
+            <p class="info-text">{{NombreActual.apellido}}</p>
+          </div>
+          <h5 class="title-sm">Telefono</h5>
+          <div class="information">
+            <p class="info-text">{{NombreActual.apellido}}</p>
+          </div>
+          <h5 class="title-sm">Email</h5>
+          <div class="information">
+            <p class="info-text">{{NombreActual.email}}</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="suggestion-form">
+        <h3 class="title">Editar</h3>
+        <div class="row">
+          <input
+            type="text"
+            class="suggestion-input"
+            placeholder="Primer Nombre"
+            [(ngModel)]="NombreDespues.nombre"
+          />
+          <input
+            type="text"
+            class="suggestion-input"
+            placeholder="Apellido"
+            [(ngModel)]="NombreDespues.apellido"
+          />
+        </div>
+
+        <div class="row">
+          <input type="text" class="suggestion-input" placeholder="Telefono" />
+          <input
+            type="email"
+            class="suggestion-input"
+            [(ngModel)]="NombreDespues.email"
+            placeholder="Email"
+          />
+        </div>
+
+        <div class="row">
+          <textarea
+            name="message"
+            class="suggestion-input textarea"
+            [(ngModel)]="NombreDespues.message"
+            placeholder="Mensaje"
+          ></textarea>
+        </div>
+        <div class="btn-i" (click)="guardado()">Enviar</div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -50,6 +50,32 @@ img {
   margin: 0 auto;
 }
 
+.container-w {
+  position: relative;
+  z-index: 5;
+  max-width: 92rem;
+  padding: 0 4rem;
+  margin: 0 auto;
+}
+
+.mycheck {
+  cursor: pointer;
+  background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z'/%3e%3c/svg%3e");
+  width: 1rem;
+  height: 1rem;
+  appearance: none;
+  border: 1px solid #888;
+  padding:  2rem;
+  background-color: var(--light-one);
+  color: var(--main-color);
+  border-radius: 2rem;
+  cursor: pointer;
+}
+
+.mycheck:checked {
+  background-color: var(--main-color);
+}
+
 .stop-scrolling {
   height: 100%;
   overflow: hidden;
@@ -203,6 +229,23 @@ img {
   text-transform: uppercase;
   font-weight: 500;
   transition: 0.3s;
+  cursor: pointer;
+}
+.btn-i {
+  display: inline-block;
+  padding: 0.85rem 2rem;
+  background-color: var(--light-one);
+  color: var(--dark-one);
+  border-radius: 2rem;
+  font-size: 1.05rem;
+  text-transform: uppercase;
+  font-weight: 500;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.btn-i:hover {
+  background-color: #6b44e0;
 }
 
 .btn:hover {
@@ -210,6 +253,7 @@ img {
 }
 
 .btn.small {
+  margin: 0.1rem;
   padding: 0.7rem 1.8rem;
   font-size: 1rem;
 }
@@ -1162,6 +1206,142 @@ header .circle {
 }
 
 /* End Contact */
+
+/* suggestion */
+
+.suggestion {
+  position: relative;
+  width: 100%;
+  padding: 13.5rem 0 8.5rem;
+}
+
+.suggestion:before,
+.suggestion:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  z-index: -1;
+  left: 0;
+}
+
+.suggestion:before {
+  top: 0;
+  height: 40%;
+}
+
+.suggestion:after {
+  top: 15%;
+  height: 80%;
+  background: url("./assets/contact-bg.png") center bottom / cover;
+}
+
+.suggestion-box {
+  width: 100%;
+  background-color: var(--light-one);
+  width: 100%;
+  border-radius: 45px;
+  padding: 5.5rem 4.5rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.suggestion-info {
+  padding-right: 2rem;
+}
+
+.suggestion-form {
+  padding-left: 2rem;
+}
+
+.suggestion-info .title:after {
+  left: 0;
+  transform: initial;
+}
+
+.information-wrap {
+  margin-top: 2rem;
+}
+
+.information {
+  display: flex;
+  align-items: center;
+}
+
+.information:not(:last-child) {
+  margin-bottom: 1.3rem;
+}
+
+.suggestion-icon {
+  min-width: 67px;
+  height: 67px;
+  display: inline-block;
+  border-radius: 50%;
+  background-color: var(--main-color);
+  color: var(--light-one);
+  text-align: center;
+  font-size: 1.4rem;
+  margin-right: 1rem;
+}
+
+.suggestion-icon i {
+  line-height: 67px;
+}
+
+.info-text {
+  font-size: 1.3rem;
+  display: inline-block;
+}
+
+.suggestion-form .title:after {
+  display: none;
+}
+
+.suggestion-form .title {
+  margin: 0;
+}
+
+.suggestion-form .row {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  grid-column-gap: 0.6rem;
+}
+
+.suggestion-input {
+  padding: 1.2rem 2.1rem;
+  margin: 0.6rem 0;
+  border: none;
+  outline: none;
+  background: #f3f3f3;
+  border-radius: 4rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: 0.3s;
+}
+
+.suggestion-input::placeholder {
+  font-weight: 400;
+}
+
+.suggestion-input.textarea {
+  resize: none;
+  min-height: 280px;
+  border-radius: 2rem;
+}
+
+.suggestion-input:hover {
+  background: #ececec;
+}
+
+.suggestion-input:focus {
+  background: #eaeaea;
+}
+
+.suggestion-input .btn {
+  margin-top: 0.6rem;
+}
+
+/* End suggestion */
 
 /* Hire me */
 

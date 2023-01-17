@@ -1,0 +1,40 @@
+<section class="suggestion" id="suggestion">
+    <div class="container">
+        <div class="suggestion-form">
+          <h3 class="title">Agregar</h3>
+          <div class="row">
+            <input
+              type="text"
+              class="suggestion-input"
+              placeholder="Primer Nombre"
+              [(ngModel)]="NombreNueva.nombre"
+            />
+            <input
+            type="text"
+            class="suggestion-input"
+            placeholder="Apellido"
+            [(ngModel)]="NombreNueva.apellido"
+            />
+          </div>
+
+          <div class="row">
+            <input
+              type="text"
+              class="suggestion-input"
+              placeholder="Telefono"
+            />
+            <input type="email" class="suggestion-input" [(ngModel)]="NombreNueva.email" placeholder="Email" />
+          </div>
+
+          <div class="row">
+            <textarea
+              name="message"
+              class="suggestion-input textarea"
+              [(ngModel)]="NombreNueva.message"
+              placeholder="Mensaje"
+            ></textarea>
+          </div>
+          <div class="btn-i" (click)="agregarNombre()">Enviar</div>
+        </div>
+      </div>
+  </section>

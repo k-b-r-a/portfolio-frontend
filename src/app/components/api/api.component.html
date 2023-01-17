@@ -1,0 +1,74 @@
+<section class="services section" id="services">
+  <div class="container">
+    <div class="section-header">
+      <h3 class="title" data-title="">Sugerencias</h3>
+      <p class="text">Algunas sugerencias que han dejado.</p>
+    </div>
+
+    <section>
+      <div class="overlay overlay-sm">
+        <img
+          src="./assets/shapes/half-circle.png"
+          class="shape half-circle1"
+          alt=""
+        />
+        <img
+          src="./assets/shapes/half-circle.png"
+          class="shape half-circle2"
+          alt=""
+        />
+        <img src="./assets/shapes/square.png" class="shape square" alt="" />
+        <img src="./assets/shapes/wave.png" class="shape wave" alt="" />
+        <img src="./assets/shapes/circle.png" class="shape circle" alt="" />
+        <img src="./assets/shapes/triangle.png" class="shape triangle" alt="" />
+        <img src="./assets/shapes/x.png" class="shape xshape" alt="" />
+      </div>
+      <div class="container-w">
+        <div class="grid">
+          <div
+            class="btn small"
+            [routerLink]="['/api/agregar']"
+            routerLinkActive="router-link-active"
+          >
+            <h4>Agregar</h4>
+          </div>
+          <div
+            class="btn small"
+            [routerLink]="['/api/editar/',isChecked]"
+            routerLinkActive="router-link-active"
+          >
+            <h4>Editar</h4>
+          </div>
+          <div
+            class="btn small"
+            (click)="eliminar()" 
+          >
+            <h4>Eliminar</h4>
+          </div>
+          <div
+            class="btn small"
+            [routerLink]="['/']"
+            routerLinkActive="router-link-active"
+          >
+            <h4>Volver</h4>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="cards">
+      <div class="card-wrap" *ngFor="let i of lista">
+        <div class="card">
+          <div class="card-content z-index">
+            <h3 class="title-sm">{{ i.nombre }} {{ i.apellido }}</h3>
+            <p class="text">{{ i.message }}</p>
+            <p class="text">
+              {{ i.email }}
+            </p>
+            <input type="checkbox" class="mycheck"  (change)="checkValue(i.id)" id="{{ i.id }}">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
