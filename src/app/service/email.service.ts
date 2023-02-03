@@ -6,7 +6,9 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class EmailService {
-  url = 'https://satisfactory-kyla-k-b-r-a.koyeb.app/api/nombres';
+  // localhost:8080/
+  // satisfactory-kyla-k-b-r-a.koyeb.app
+  url = '/api/nombres';
 
   constructor(private http: HttpClient) {}
   getNombres(): Observable<any> {

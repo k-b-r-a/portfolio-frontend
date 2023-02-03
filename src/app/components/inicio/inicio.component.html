@@ -2,7 +2,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio Website</title>
+    <title>{{title}}</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
@@ -16,29 +16,29 @@
     <main>
       <header id="header">
         <div class="overlay overlay-lg">
-          <img src="./assets/shapes/square.png" class="shape square" alt="" />
-          <img src="./assets/shapes/circle.png" class="shape circle" alt="" />
+          <img src="{{Img('square')}}" class="shape square" alt="" />
+          <img src="{{Img('circle')}}" class="shape circle" alt="" />
           <img
-            src="./assets/shapes/half-circle.png"
+            src="{{Img('half-circle')}}"
             class="shape half-circle1"
             alt=""
           />
           <img
-            src="./assets/shapes/half-circle.png"
+            src="{{Img('half-circle')}}"
             class="shape half-circle2"
             alt=""
           />
-          <img src="./assets/shapes/x.png" class="shape xshape" alt="" />
-          <img src="./assets/shapes/wave.png" class="shape wave wave1" alt="" />
-          <img src="./assets/shapes/wave.png" class="shape wave wave2" alt="" />
+          <img src="{{Img('x')}}" class="shape xshape" alt="" />
+          <img src="{{Img('wave')}}" class="shape wave wave1" alt="" />
+          <img src="{{Img('wave')}}" class="shape wave wave2" alt="" />
           <img
-            src="./assets/shapes/triangle.png"
+            src="{{Img('triangle')}}"
             class="shape triangle"
             alt=""
           />
-          <img src="./assets/shapes/letters.png" class="letters" alt="" />
+          <img src="{{Img('letters')}}" class="letters" alt="" />
           <img
-            src="./assets/shapes/points1.png"
+            src="{{Img('points1')}}"
             class="points points1"
             alt=""
           />
@@ -47,7 +47,7 @@
         <nav>
           <div class="container">
             <div class="logo">
-              <img src="./assets/logo.png" alt="" />
+              <img src="{{Img('logo')}}" alt="" />
             </div>
 
             <div class="links">
@@ -83,23 +83,19 @@
             <div class="column-1">
               <h1 class="header-title">Esteban Zea</h1>
               <p class="text">
-                Soy un desarrollador web full stack motivado, con ganas de
-                trabajar en proyectos desafiantes y estoy siempre dispuesto a
-                aprender nuevas habilidades. Soy un trabajador dedicado y
-                comprometido, y estoy ansioso de poner mis habilidades su
-                servicio.
+                {{Text('acerca de mi')}}
               </p>
               <a href="#" class="btn">Descargar CV</a>
             </div>
 
             <div class="column-2 image">
               <img
-                src="./assets/shapes/points2.png"
+                src="{{Img('points2')}}"
                 class="points points2"
                 alt=""
               />
               <img
-                src="./assets/person.png"
+                src="{{Img('person')}}"
                 class="img-element z-index"
                 alt=""
               />
@@ -118,18 +114,16 @@
           <div class="cards">
             <div class="card-wrap">
               <img
-                src="./assets/shapes/points3.png"
+                src="{{Img('points3')}}"
                 class="points points1 points-sq"
                 alt=""
               />
               <div class="card" data-card="UI/UX">
                 <div class="card-content z-index">
-                  <img src="./assets/design-icon.png" class="icon" alt="" />
+                  <img src="{{Img('design-icon')}}" class="icon" alt="" />
                   <h3 class="title-sm">Web Design</h3>
                   <p class="text">
-                    Mi experiencia en diseño web me permite crear sitios
-                    atractivos y fáciles de usar, con un enfoque en la
-                    usabilidad y la experiencia del usuario.
+                    {{Text("Web Design")}}
                   </p>
                   <a href="#" class="btn small">Leer más</a>
                 </div>
@@ -139,12 +133,10 @@
             <div class="card-wrap">
               <div class="card" data-card="Code">
                 <div class="card-content z-index">
-                  <img src="./assets/code-icon.png" class="icon" alt="" />
+                  <img src="{{Img('code-icon')}}" class="icon" alt="" />
                   <h3 class="title-sm">Web Development</h3>
                   <p class="text">
-                    Tengo experiencia en la creación de sitios y aplicaciones
-                    dinámicas y personalizadas, utilizando tecnologías como
-                    Anular, Vuejs, React
+                    {{Text("Web Development")}}
                   </p>
                   <a href="#" class="btn small">Leer más</a>
                 </div>
@@ -153,19 +145,16 @@
 
             <div class="card-wrap">
               <img
-                src="./assets/shapes/points3.png"
+                src="{{Img('points3')}}"
                 class="points points2 points-sq"
                 alt=""
               />
               <div class="card" data-card="App">
                 <div class="card-content z-index">
-                  <img src="./assets/app-icon.png" class="icon" alt="" />
+                  <img src="{{Img('app-icon')}}" class="icon" alt="" />
                   <h3 class="title-sm">App Development</h3>
                   <p class="text">
-                    Desarrollo aplicaciones móviles y de escritorio utilizando
-                    tecnologías como Java, Reactnative, entre otras. Me
-                    especializo en diseño de interfaz de usuario y en garantizar
-                    una excelente experiencia del usuario.
+                    {{Text("App Development")}}
                   </p>
                   <a href="#" class="btn small">Leer más</a>
                 </div>
@@ -179,24 +168,24 @@
         <div class="background-bg">
           <div class="overlay overlay-sm">
             <img
-              src="./assets/shapes/half-circle.png"
+              src="{{Img('half-circle')}}"
               class="shape half-circle1"
               alt=""
             />
             <img
-              src="./assets/shapes/half-circle.png"
+              src="{{Img('half-circle')}}"
               class="shape half-circle2"
               alt=""
             />
-            <img src="./assets/shapes/square.png" class="shape square" alt="" />
-            <img src="./assets/shapes/wave.png" class="shape wave" alt="" />
-            <img src="./assets/shapes/circle.png" class="shape circle" alt="" />
+            <img src="{{Img('square')}}" class="shape square" alt="" />
+            <img src="{{Img('wave')}}" class="shape wave" alt="" />
+            <img src="{{Img('circle')}}" class="shape circle" alt="" />
             <img
-              src="./assets/shapes/triangle.png"
+              src="{{Img('triangle')}}"
               class="shape triangle"
               alt=""
             />
-            <img src="./assets/shapes/x.png" class="shape xshape" alt="" />
+            <img src="{{Img('x')}}" class="shape xshape" alt="" />
           </div>
         </div>
 
@@ -209,7 +198,7 @@
             <div class="grid">
               <div class="grid-item api-design">
                 <div class="gallery-image">
-                  <img src="./assets/portfolio/port1.png" alt="" />
+                  <img src="{{Img('port1')}}" alt="" />
                    <div [routerLink]="['/api']" routerLinkActive="router-link-active" >
                     <div class="img-overlay">
                       <div class="plus"></div>
@@ -223,7 +212,7 @@
               </div>
               <div class="grid-item vue-testing">
                 <div class="gallery-image">
-                  <img src="./assets/portfolio/port2.png" alt="" />
+                  <img src="{{Img('port2')}}" alt="" />
                   <a href="https://loreychuchosc.web.app/">
                     <div class="img-overlay">
                       <div class="plus"></div>
@@ -250,11 +239,7 @@
             <div class="column-1">
               <h3 class="title-sm">Hola, yo soy</h3>
               <p class="text">
-                Soy un desarrollador web full stack con experiencia en
-                tecnologías como HTML, CSS, JavaScript, PHP y MySQL. Me
-                especializo en crear sitios web y aplicaciones web dinámicas y
-                personalizadas. Me gusta trabajar en proyectos desafiantes y
-                siempre estoy buscando aprender nuevas habilidades.
+                {{Text("App Development")}}
               </p>
               <div class="skills">
                 <div class="skill html">
@@ -280,8 +265,8 @@
             </div>
 
             <div class="column-2 image">
-              <img src="./assets/shapes/points4.png" class="points" alt="" />
-              <img src="./assets/about.png" class="z-index" alt="" />
+              <img src="{{Img('points4')}}" class="points" alt="" />
+              <img src="{{Img('about')}}" class="z-index" alt="" />
             </div>
           </div>
         </div>
@@ -289,19 +274,19 @@
 
       <section class="records">
         <div class="overlay overlay-sm">
-          <img src="./assets/shapes/square.png" alt="" class="shape square1" />
-          <img src="./assets/shapes/square.png" alt="" class="shape square2" />
-          <img src="./assets/shapes/circle.png" alt="" class="shape circle" />
+          <img src="{{Img('square')}}" alt="" class="shape square1" />
+          <img src="{{Img('square')}}" alt="" class="shape square2" />
+          <img src="{{Img('circle')}}" alt="" class="shape circle" />
           <img
-            src="./assets/shapes/half-circle.png"
+            src="{{Img('half-circle')}}"
             alt=""
             class="shape half-circle"
           />
-          <img src="./assets/shapes/wave.png" alt="" class="shape wave wave1" />
-          <img src="./assets/shapes/wave.png" alt="" class="shape wave wave2" />
-          <img src="./assets/shapes/x.png" alt="" class="shape xshape" />
+          <img src="{{Img('wave')}}" alt="" class="shape wave wave1" />
+          <img src="{{Img('wave')}}" alt="" class="shape wave wave2" />
+          <img src="{{Img('x')}}" alt="" class="shape xshape" />
           <img
-            src="./assets/shapes/triangle.png"
+            src="{{Img('triangle')}}"
             alt=""
             class="shape triangle"
           />
@@ -310,28 +295,28 @@
         <div class="container">
           <div class="wrap">
             <div class="record-circle">
-              <h2 class="number" data-num="235">3</h2>
+              <h2 class="number">{{Text("proyectos")}}</h2>
               <h4 class="sub-title">Proyectos</h4>
             </div>
           </div>
 
           <div class="wrap">
             <div class="record-circle active">
-              <h2 class="number">1</h2>
+              <h2 class="number">{{Text("Clientes felices")}}</h2>
               <h4 class="sub-title">Clientes felices</h4>
             </div>
           </div>
 
           <div class="wrap">
             <div class="record-circle">
-              <h2 class="number">989</h2>
+              <h2 class="number">{{Text("Horas de trabajo")}}</h2>
               <h4 class="sub-title">Horas de trabajo</h4>
             </div>
           </div>
 
           <div class="wrap">
             <div class="record-circle">
-              <h2 class="number">0</h2>
+              <h2 class="number">{{Text("Premios")}}</h2>
               <h4 class="sub-title">Premios</h4>
             </div>
           </div>
@@ -344,10 +329,7 @@
             <div class="contact-info">
               <h3 class="title">Ponte en contacto</h3>
               <p class="text">
-                Por favor, no dude en ponerse en contacto conmigo para discutir
-                cualquier oportunidad de trabajo relacionada con el desarrollo
-                web full stack, estaré encantado de hablar de cualquier proyecto
-                que tenga en mente.
+                {{Text("contacto")}}
               </p>
               <div class="information-wrap">
                 <div class="information">
@@ -417,8 +399,7 @@
         <div class="container">
           <h3 class="title">Hablemos de algun proyecto</h3>
           <p class="text">
-            Podriamos discutir sobre un emocionante proyecto de desarrollo web
-            full stack y ¡Estaría encantado de estar a bordo!
+            {{Text("hablar de algún proyecto")}}
           </p>
           <a href="#" class="btn">Contratame</a>
         </div>
@@ -431,9 +412,7 @@
           <div class="grid-4-col footer-about">
             <h3 class="title-sm">Acerca de</h3>
             <p class="text">
-              Mi portfolio incluye proyectos de desarrollo web que abarcan
-              tecnologías como Reactjs, Vuejs, Angular. Estoy seguro de que mi
-              habilidad de programación será de gran ayuda para su proyecto.
+              {{Text("acerca de")}}
             </p>
           </div>
 
