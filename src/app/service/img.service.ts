@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 export class ImgService {
     // localhost:8080/
     // satisfactory-kyla-k-b-r-a.koyeb.app
-    url = '/api/imgs';
+    url = 'https:/satisfactory-kyla-k-b-r-a.koyeb.app/api/imgs';
   
     constructor(private http: HttpClient) {}
     getImg(): Observable<any> {

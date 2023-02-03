@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 export class TextService {
     // localhost:8080/
     // satisfactory-kyla-k-b-r-a.koyeb.app
-    url = '/api/texts';
+    url = 'https:/satisfactory-kyla-k-b-r-a.koyeb.app/api/texts';
   
     constructor(private http: HttpClient) {}
     getText(): Observable<any> {
