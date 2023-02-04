@@ -72,7 +72,7 @@ export class InicioComponent implements OnInit {
   }
   Img(b: any) {
     var a = null;
-    if (this.Texts !== undefined) {
+    if (this.Imgl !== undefined) {
       for (let i = 0; i < this.Imgl.length; i++) {
         a = b == this.Imgl[i].nombre;
         if (a == true) {
