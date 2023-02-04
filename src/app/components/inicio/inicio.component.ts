@@ -10,30 +10,39 @@ import { TextService } from 'src/app/service/text.service';
   styleUrls: ['./inicio.component.css'],
 })
 export class InicioComponent implements OnInit {
-  constructor(private nombreService:EmailService, private router:Router, private textService:TextService, private imgService:ImgService) {}
-  Texts:any;
-  Imgl:any;
-  NombreNueva: Nombre={id:'',nombre:'',apellido:'', message:'',email:''};
+  constructor(
+    private nombreService: EmailService,
+    private router: Router,
+    private textService: TextService,
+    private imgService: ImgService
+  ) {}
+  Texts: any;
+  Imgl: any;
+  NombreNueva: Nombre = {
+    id: '',
+    nombre: '',
+    apellido: '',
+    message: '',
+    email: '',
+  };
   ngOnInit(): void {
     this.Inicio();
   }
-  title="Portfolio Website"
-  agregarNombre(){
-    this.nombreService.saveNombre(this.NombreNueva).subscribe(
-      {
-        next: (res)  => {
-          console.log(res);
-        },
-        error: (err) => {
-          console.log(err);
-        },
-      }
-    );
+  title = 'Portfolio Website';
+  agregarNombre() {
+    this.nombreService.saveNombre(this.NombreNueva).subscribe({
+      next: (res) => {
+        console.log(res);
+      },
+      error: (err) => {
+        console.log(err);
+      },
+    });
   }
   Inicio() {
     this.textService.getText().subscribe({
-      next: (res)  => {
-        this.Texts=res;
+      next: (res) => {
+        this.Texts = res;
         console.log(res);
       },
       error: (err) => {
@@ -41,8 +50,8 @@ export class InicioComponent implements OnInit {
       },
     });
     this.imgService.getImg().subscribe({
-      next: (res)  => {
-        this.Imgl=res;
+      next: (res) => {
+        this.Imgl = res;
         console.log(res);
       },
       error: (err) => {
@@ -50,23 +59,26 @@ export class InicioComponent implements OnInit {
       },
     });
   }
-  Text(b:any){
+  Text(b: any) {
     var a = null;
-    for (let i = 0; i < this.Texts.length; i++) {
-      a = b == this.Texts[i].nombre
-      if (a == true) {
-        return this.Texts[i].message
+    if (this.Texts !== undefined) {
+      for (let i = 0; i < this.Texts.length; i++) {
+        a = b == this.Texts[i].nombre;
+        if (a == true) {
+          return this.Texts[i].message;
+        }
       }
     }
   }
-  Img(b:any){
+  Img(b: any) {
     var a = null;
-    for (let i = 0; i < this.Imgl.length; i++) {
-      a = b == this.Imgl[i].nombre
-      if (a == true) {
-        return this.Imgl[i].url
+    if (this.Texts !== undefined) {
+      for (let i = 0; i < this.Imgl.length; i++) {
+        a = b == this.Imgl[i].nombre;
+        if (a == true) {
+          return this.Imgl[i].url;
+        }
       }
     }
   }
 }
-
