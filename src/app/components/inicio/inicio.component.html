@@ -2,7 +2,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{{title}}</title>
+    <title>{{ title }}</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
@@ -16,38 +16,30 @@
     <main>
       <header id="header">
         <div class="overlay overlay-lg">
-          <img src="{{Img('square')}}" class="shape square" alt="" />
-          <img src="{{Img('circle')}}" class="shape circle" alt="" />
+          <img src="{{ img('square') }}" class="shape square" alt="" />
+          <img src="{{ img('circle') }}" class="shape circle" alt="" />
           <img
-            src="{{Img('half-circle')}}"
+            src="{{ img('half-circle') }}"
             class="shape half-circle1"
             alt=""
           />
           <img
-            src="{{Img('half-circle')}}"
+            src="{{ img('half-circle') }}"
             class="shape half-circle2"
             alt=""
           />
-          <img src="{{Img('x')}}" class="shape xshape" alt="" />
-          <img src="{{Img('wave')}}" class="shape wave wave1" alt="" />
-          <img src="{{Img('wave')}}" class="shape wave wave2" alt="" />
-          <img
-            src="{{Img('triangle')}}"
-            class="shape triangle"
-            alt=""
-          />
-          <img src="{{Img('letters')}}" class="letters" alt="" />
-          <img
-            src="{{Img('points1')}}"
-            class="points points1"
-            alt=""
-          />
+          <img src="{{ img('x') }}" class="shape xshape" alt="" />
+          <img src="{{ img('wave') }}" class="shape wave wave1" alt="" />
+          <img src="{{ img('wave') }}" class="shape wave wave2" alt="" />
+          <img src="{{ img('triangle') }}" class="shape triangle" alt="" />
+          <img src="{{ img('letters') }}" class="letters" alt="" />
+          <img src="{{ img('points1') }}" class="points points1" alt="" />
         </div>
 
         <nav>
           <div class="container">
             <div class="logo">
-              <img src="{{Img('logo')}}" alt="" />
+              <img src="{{ img('logo') }}" alt="" />
             </div>
 
             <div class="links">
@@ -68,34 +60,80 @@
                   <a href="#contact">Contacto</a>
                 </li>
                 <li>
+                  <a href="#login" (click)="login()">{{ Login }}</a>
+                </li>
+                <li>
                   <a href="#hireme" class="active">Contratame</a>
                 </li>
               </ul>
             </div>
+
             <div class="hamburger-menu">
               <div class="bar"></div>
             </div>
           </div>
         </nav>
 
+        <section [ngClass]="classLogin" id="contact">
+          <div class="container">
+            <div class="login-form">
+              <h3 class="title">Login</h3>
+              <div class="row">
+                <input
+                  type="text"
+                  class="user"
+                  [(ngModel)]="user.user"
+                  id="userId"
+                  name="userId"
+                  placeholder="User"
+                />
+                <input
+                  type="password"
+                  class="password"
+                  [(ngModel)]="user.password"
+                  (keyup.enter)="userLogin()"
+                  id="password"
+                  name="password"
+                  placeholder="Password"
+                />
+              </div>
+              <div class="btn" type="submit" (click)="userLogin()">Login</div>
+            </div>
+          </div>
+        </section>
+
         <div class="header-content">
           <div class="container grid-2">
             <div class="column-1">
               <h1 class="header-title">Esteban Zea</h1>
-              <p class="text">
-                {{Text('acerca de mi')}}
+              <p class="text" [ngClass]="Logged">
+                {{ text("acerca de mi") }}
               </p>
+              <div class="container" [ngClass]="logged">
+                <input
+                  type="button"
+                  [ngClass]="logged"
+                  class="mycheck-button"
+                  id=""
+                  (click)="editado('acerca de mi')"
+                />
+
+                <textarea
+                  [readOnly]="editable"
+                  [ngClass]="logged"
+                  class="textarea text"
+                  value="{{ text('acerca de mi') }}"
+                  [(ngModel)]="TextoNuevo.message"
+                  placeholder="{{ text('acerca de mi') }}"
+                ></textarea>
+              </div>
               <a href="#" class="btn">Descargar CV</a>
             </div>
 
             <div class="column-2 image">
+              <img src="{{ img('points2') }}" class="points points2" alt="" />
               <img
-                src="{{Img('points2')}}"
-                class="points points2"
-                alt=""
-              />
-              <img
-                src="{{Img('person')}}"
+                src="{{ img('person') }}"
                 class="img-element z-index"
                 alt=""
               />
@@ -114,17 +152,33 @@
           <div class="cards">
             <div class="card-wrap">
               <img
-                src="{{Img('points3')}}"
+                src="{{ img('points3') }}"
                 class="points points1 points-sq"
                 alt=""
               />
               <div class="card" data-card="UI/UX">
                 <div class="card-content z-index">
-                  <img src="{{Img('design-icon')}}" class="icon" alt="" />
+                  <img src="{{ img('design-icon') }}" class="icon" alt="" />
                   <h3 class="title-sm">Web Design</h3>
-                  <p class="text">
-                    {{Text("Web Design")}}
+                  <p class="text" [ngClass]="Logged">
+                    {{ text("Web Design") }}
                   </p>
+                  <div class="container" [ngClass]="logged">
+                    <input
+                      type="button"
+                      [ngClass]="logged"
+                      class="mycheck-button"
+                      (click)="editado('Web Design')"
+                    />
+                    <textarea
+                      [readOnly]="editable"
+                      [ngClass]="logged"
+                      class="textarea text"
+                      value="{{ text('Web Design') }}"
+                      [(ngModel)]="TextoNuevo.message"
+                      placeholder="{{ text('Web Design') }}"
+                    ></textarea>
+                  </div>
                   <a href="#" class="btn small">Leer más</a>
                 </div>
               </div>
@@ -133,11 +187,27 @@
             <div class="card-wrap">
               <div class="card" data-card="Code">
                 <div class="card-content z-index">
-                  <img src="{{Img('code-icon')}}" class="icon" alt="" />
+                  <img src="{{ img('code-icon') }}" class="icon" alt="" />
                   <h3 class="title-sm">Web Development</h3>
-                  <p class="text">
-                    {{Text("Web Development")}}
+                  <p class="text" [ngClass]="Logged">
+                    {{ text("Web Development") }}
                   </p>
+                  <div class="container" [ngClass]="logged">
+                    <input
+                      type="button"
+                      [ngClass]="logged"
+                      class="mycheck-button"
+                      (click)="editado('Web Development')"
+                    />
+                    <textarea
+                      [readOnly]="editable"
+                      [ngClass]="logged"
+                      class="textarea text"
+                      value="{{ text('Web Development') }}"
+                      [(ngModel)]="TextoNuevo.message"
+                      placeholder="{{ text('Web Development') }}"
+                    ></textarea>
+                  </div>
                   <a href="#" class="btn small">Leer más</a>
                 </div>
               </div>
@@ -145,17 +215,33 @@
 
             <div class="card-wrap">
               <img
-                src="{{Img('points3')}}"
+                src="{{ img('points3') }}"
                 class="points points2 points-sq"
                 alt=""
               />
               <div class="card" data-card="App">
                 <div class="card-content z-index">
-                  <img src="{{Img('app-icon')}}" class="icon" alt="" />
+                  <img src="{{ img('app-icon') }}" class="icon" alt="" />
                   <h3 class="title-sm">App Development</h3>
-                  <p class="text">
-                    {{Text("App Development")}}
+                  <p class="text" [ngClass]="Logged">
+                    {{ text("App Development") }}
                   </p>
+                  <div class="container" [ngClass]="logged">
+                    <input
+                      type="button"
+                      [ngClass]="logged"
+                      class="mycheck-button"
+                      (click)="editado('App Development')"
+                    />
+                    <textarea
+                      [readOnly]="editable"
+                      [ngClass]="logged"
+                      class="textarea text"
+                      value="{{ text('App Development') }}"
+                      [(ngModel)]="TextoNuevo.message"
+                      placeholder="{{ text('App Development') }}"
+                    ></textarea>
+                  </div>
                   <a href="#" class="btn small">Leer más</a>
                 </div>
               </div>
@@ -168,24 +254,20 @@
         <div class="background-bg">
           <div class="overlay overlay-sm">
             <img
-              src="{{Img('half-circle')}}"
+              src="{{ img('half-circle') }}"
               class="shape half-circle1"
               alt=""
             />
             <img
-              src="{{Img('half-circle')}}"
+              src="{{ img('half-circle') }}"
               class="shape half-circle2"
               alt=""
             />
-            <img src="{{Img('square')}}" class="shape square" alt="" />
-            <img src="{{Img('wave')}}" class="shape wave" alt="" />
-            <img src="{{Img('circle')}}" class="shape circle" alt="" />
-            <img
-              src="{{Img('triangle')}}"
-              class="shape triangle"
-              alt=""
-            />
-            <img src="{{Img('x')}}" class="shape xshape" alt="" />
+            <img src="{{ img('square') }}" class="shape square" alt="" />
+            <img src="{{ img('wave') }}" class="shape wave" alt="" />
+            <img src="{{ img('circle') }}" class="shape circle" alt="" />
+            <img src="{{ img('triangle') }}" class="shape triangle" alt="" />
+            <img src="{{ img('x') }}" class="shape xshape" alt="" />
           </div>
         </div>
 
@@ -198,8 +280,11 @@
             <div class="grid">
               <div class="grid-item api-design">
                 <div class="gallery-image">
-                  <img src="{{Img('port1')}}" alt="" />
-                   <div [routerLink]="['/api']" routerLinkActive="router-link-active" >
+                  <img src="{{ img('port1') }}" alt="" />
+                  <div
+                    [routerLink]="['/api']"
+                    routerLinkActive="router-link-active"
+                  >
                     <div class="img-overlay">
                       <div class="plus"></div>
                       <div class="img-description">
@@ -207,12 +292,12 @@
                         <h5>View Demo</h5>
                       </div>
                     </div>
-                   </div>
+                  </div>
                 </div>
               </div>
               <div class="grid-item vue-testing">
                 <div class="gallery-image">
-                  <img src="{{Img('port2')}}" alt="" />
+                  <img src="{{ img('port2') }}" alt="" />
                   <a href="https://loreychuchosc.web.app/">
                     <div class="img-overlay">
                       <div class="plus"></div>
@@ -238,9 +323,25 @@
           <div class="section-body grid-2">
             <div class="column-1">
               <h3 class="title-sm">Hola, yo soy</h3>
-              <p class="text">
-                {{Text("App Development")}}
+              <p class="text" [ngClass]="Logged">
+                {{ text("App Development") }}
               </p>
+              <div class="container" [ngClass]="logged">
+                <input
+                  type="button"
+                  [ngClass]="logged"
+                  class="mycheck-button"
+                  (click)="editado('App Development')"
+                />
+                <textarea
+                  [readOnly]="editable"
+                  [ngClass]="logged"
+                  class="textarea text"
+                  value="{{ text('App Development') }}"
+                  [(ngModel)]="TextoNuevo.message"
+                  placeholder="{{ text('App Development') }}"
+                ></textarea>
+              </div>
               <div class="skills">
                 <div class="skill html">
                   <h3 class="skill-title">HTML</h3>
@@ -265,8 +366,8 @@
             </div>
 
             <div class="column-2 image">
-              <img src="{{Img('points4')}}" class="points" alt="" />
-              <img src="{{Img('about')}}" class="z-index" alt="" />
+              <img src="{{ img('points4') }}" class="points" alt="" />
+              <img src="{{ img('about') }}" class="z-index" alt="" />
             </div>
           </div>
         </div>
@@ -274,49 +375,113 @@
 
       <section class="records">
         <div class="overlay overlay-sm">
-          <img src="{{Img('square')}}" alt="" class="shape square1" />
-          <img src="{{Img('square')}}" alt="" class="shape square2" />
-          <img src="{{Img('circle')}}" alt="" class="shape circle" />
+          <img src="{{ img('square') }}" alt="" class="shape square1" />
+          <img src="{{ img('square') }}" alt="" class="shape square2" />
+          <img src="{{ img('circle') }}" alt="" class="shape circle" />
           <img
-            src="{{Img('half-circle')}}"
+            src="{{ img('half-circle') }}"
             alt=""
             class="shape half-circle"
           />
-          <img src="{{Img('wave')}}" alt="" class="shape wave wave1" />
-          <img src="{{Img('wave')}}" alt="" class="shape wave wave2" />
-          <img src="{{Img('x')}}" alt="" class="shape xshape" />
-          <img
-            src="{{Img('triangle')}}"
-            alt=""
-            class="shape triangle"
-          />
+          <img src="{{ img('wave') }}" alt="" class="shape wave wave1" />
+          <img src="{{ img('wave') }}" alt="" class="shape wave wave2" />
+          <img src="{{ img('x') }}" alt="" class="shape xshape" />
+          <img src="{{ img('triangle') }}" alt="" class="shape triangle" />
         </div>
 
         <div class="container">
           <div class="wrap">
             <div class="record-circle">
-              <h2 class="number">{{Text("proyectos")}}</h2>
+              <h2 class="number" [ngClass]="Logged">{{ text("proyectos") }}</h2>
+              <div class="container" [ngClass]="logged">
+                <input
+                  type="button"
+                  [ngClass]="logged"
+                  class="mycheck-button"
+                  (click)="editado('proyectos')"
+                />
+                <textarea
+                  [readOnly]="editable"
+                  [ngClass]="logged"
+                  class="textarea-cir text"
+                  value="{{ text('proyectos') }}"
+                  [(ngModel)]="TextoNuevo.message"
+                  placeholder="{{ text('proyectos') }}"
+                ></textarea>
+              </div>
               <h4 class="sub-title">Proyectos</h4>
             </div>
           </div>
 
           <div class="wrap">
             <div class="record-circle active">
-              <h2 class="number">{{Text("Clientes felices")}}</h2>
+              <h2 class="number" [ngClass]="Logged">
+                {{ text("Clientes felices") }}
+              </h2>
+              <div class="container" [ngClass]="logged">
+                <input
+                  type="button"
+                  [ngClass]="logged"
+                  class="mycheck-button"
+                  (click)="editado('Clientes felices')"
+                />
+                <textarea
+                  [readOnly]="editable"
+                  [ngClass]="logged"
+                  class="textarea-cir text"
+                  value="{{ text('Clientes felices') }}"
+                  [(ngModel)]="TextoNuevo.message"
+                  placeholder="{{ text('Clientes felices') }}"
+                ></textarea>
+              </div>
               <h4 class="sub-title">Clientes felices</h4>
             </div>
           </div>
 
           <div class="wrap">
             <div class="record-circle">
-              <h2 class="number">{{Text("Horas de trabajo")}}</h2>
+              <h2 class="number" [ngClass]="Logged">
+                {{ text("Horas de trabajo") }}
+              </h2>
+              <div class="container" [ngClass]="logged">
+                <input
+                  type="button"
+                  [ngClass]="logged"
+                  class="mycheck-button"
+                  (click)="editado('Horas de trabajo')"
+                />
+                <textarea
+                  [readOnly]="editable"
+                  [ngClass]="logged"
+                  class="textarea-cir text"
+                  value="{{ text('Horas de trabajo') }}"
+                  [(ngModel)]="TextoNuevo.message"
+                  placeholder="{{ text('Horas de trabajo') }}"
+                ></textarea>
+              </div>
               <h4 class="sub-title">Horas de trabajo</h4>
             </div>
           </div>
 
           <div class="wrap">
             <div class="record-circle">
-              <h2 class="number">{{Text("Premios")}}</h2>
+              <h2 class="number" [ngClass]="Logged">{{ text("Premios") }}</h2>
+              <div class="container" [ngClass]="logged">
+                <input
+                  type="button"
+                  [ngClass]="logged"
+                  class="mycheck-button"
+                  (click)="editado('Premios')"
+                />
+                <textarea
+                  [readOnly]="editable"
+                  [ngClass]="logged"
+                  class="textarea-cir text"
+                  value="{{ text('Premios') }}"
+                  [(ngModel)]="TextoNuevo.message"
+                  placeholder="{{ text('Premios') }}"
+                ></textarea>
+              </div>
               <h4 class="sub-title">Premios</h4>
             </div>
           </div>
@@ -328,9 +493,25 @@
           <div class="contact-box">
             <div class="contact-info">
               <h3 class="title">Ponte en contacto</h3>
-              <p class="text">
-                {{Text("contacto")}}
+              <p class="text" [ngClass]="Logged">
+                {{ text("contacto") }}
               </p>
+              <div class="container" [ngClass]="logged">
+                <input
+                  type="button"
+                  [ngClass]="logged"
+                  class="mycheck-button"
+                  (click)="editado('contacto')"
+                />
+                <textarea
+                  [readOnly]="editable"
+                  [ngClass]="logged"
+                  class="textarea text"
+                  value="{{ text('contacto') }}"
+                  [(ngModel)]="TextoNuevo.message"
+                  placeholder="{{ text('contacto') }}"
+                ></textarea>
+              </div>
               <div class="information-wrap">
                 <div class="information">
                   <div class="contact-icon">
@@ -378,7 +559,12 @@
                   class="contact-input"
                   placeholder="Telefono"
                 />
-                <input type="email" class="contact-input"  [(ngModel)]="NombreNueva.email" placeholder="Email" />
+                <input
+                  type="email"
+                  class="contact-input"
+                  [(ngModel)]="NombreNueva.email"
+                  placeholder="Email"
+                />
               </div>
 
               <div class="row">
@@ -399,7 +585,7 @@
         <div class="container">
           <h3 class="title">Hablemos de algun proyecto</h3>
           <p class="text">
-            {{Text("hablar de algún proyecto")}}
+            {{ text("hablar de algún proyecto") }}
           </p>
           <a href="#" class="btn">Contratame</a>
         </div>
@@ -412,7 +598,7 @@
           <div class="grid-4-col footer-about">
             <h3 class="title-sm">Acerca de</h3>
             <p class="text">
-              {{Text("acerca de")}}
+              {{ text("acerca de") }}
             </p>
           </div>
 
