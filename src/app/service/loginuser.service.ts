@@ -8,8 +8,8 @@ import { User } from '../user';
 })
 export class LoginuserService {
   // http://localhost:8080/
-  // https://satisfactory-kyla-k-b-r-a.koyeb.app/api/texts
-  url = 'https://satisfactory-kyla-k-b-r-a.koyeb.app/api/texts';
+  // https://satisfactory-kyla-k-b-r-a.koyeb.app/api/login
+  url = 'https://satisfactory-kyla-k-b-r-a.koyeb.app/api/login';
 
   constructor(private http: HttpClient) { }
 
